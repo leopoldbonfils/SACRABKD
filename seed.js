@@ -291,6 +291,7 @@ const seedData = async () => {
       {
         name: 'Dr. Robert Chen',
         email: 'r.chen@kigali-health.gov',
+        phone: '+250 788 123 456',
         subject: 'General Inquiry',
         message: 'Hello, I am interested in coordinating an upcoming WHO checklist audit across our 3 district hospitals in Kigali. Please let me know how we can coordinate support.',
         isRead: false
@@ -298,6 +299,7 @@ const seedData = async () => {
       {
         name: 'Sandra Ndoli',
         email: 'sandra@ur.ac.rw',
+        phone: '+250 789 987 654',
         subject: 'Membership Activation',
         message: 'Dear SACRA committee, I submitted my student application last week. I would love to follow up on my membership registration status. Thank you!',
         isRead: true,

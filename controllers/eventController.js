@@ -59,7 +59,7 @@ exports.getById = async (req, res) => {
 // @route   POST /api/events
 // @access  Private (Admin/Editor)
 exports.create = async (req, res) => {
-  const { title, description, date, location, category, status } = req.body;
+  const { title, description, date, location, category, status, videoUrl } = req.body;
 
   try {
     const event = await Event.create({
@@ -68,7 +68,8 @@ exports.create = async (req, res) => {
       date,
       location,
       category,
-      status: status || 'Draft'
+      status: status || 'Draft',
+      videoUrl: videoUrl || null
     });
 
     res.status(201).json(event);

@@ -18,6 +18,10 @@ const Contact = sequelize.define('Contact', {
       isEmail: true
     }
   },
+  phone: {
+    type: DataTypes.STRING,
+    allowNull: true
+  },
   subject: {
     type: DataTypes.STRING,
     allowNull: false

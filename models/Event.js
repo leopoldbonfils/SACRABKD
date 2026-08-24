@@ -31,6 +31,10 @@ const Event = sequelize.define('Event', {
     type: DataTypes.STRING,
     allowNull: false,
     defaultValue: 'Draft' // Draft, Live, Past, Cancelled
+  },
+  videoUrl: {
+    type: DataTypes.STRING,
+    allowNull: true
   }
 }, {
   timestamps: true

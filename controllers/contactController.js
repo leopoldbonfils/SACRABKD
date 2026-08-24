@@ -108,12 +108,13 @@ exports.getUnread = async (req, res) => {
 // @route   POST /api/contact
 // @access  Public
 exports.submitMessage = async (req, res) => {
-  const { name, email, subject, message } = req.body;
+  const { name, email, phone, subject, message } = req.body;
 
   try {
     const inquiry = await Contact.create({
       name,
       email,
+      phone,
       subject,
       message
     });
