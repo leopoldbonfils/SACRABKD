@@ -5,15 +5,9 @@ const databaseUrl = process.env.DATABASE_URL || 'postgres://postgres:postgres@lo
 
 const sequelize = new Sequelize(databaseUrl, {
   dialect: 'postgres',
-  logging: false, // Set to console.log to see SQL queries in console
+  logging: false,
   dialectOptions: {
-    // If you are connecting to an external DB requiring SSL, uncomment the lines below:
-    /*
-    ssl: {
-      require: true,
-      rejectUnauthorized: false
-    }
-    */
+
   }
 });
 

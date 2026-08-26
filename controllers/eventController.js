@@ -1,16 +1,11 @@
 const { Op } = require('sequelize');
 const Event = require('../models/Event');
 
-// @desc    Get all events
-// @route   GET /api/events
-// @access  Public
 exports.getAll = async (req, res) => {
   const { search, tab, status } = req.query;
 
   try {
     const whereConditions = {};
-
-    // Search query filter
     if (search) {
       whereConditions[Op.or] = [
         { title: { [Op.iLike]: `%${search}%` } },
@@ -40,9 +35,6 @@ exports.getAll = async (req, res) => {
   }
 };
 
-// @desc    Get single event
-// @route   GET /api/events/:id
-// @access  Public
 exports.getById = async (req, res) => {
   try {
     const event = await Event.findByPk(req.params.id);
@@ -55,9 +47,6 @@ exports.getById = async (req, res) => {
   }
 };
 
-// @desc    Create an event
-// @route   POST /api/events
-// @access  Private (Admin/Editor)
 exports.create = async (req, res) => {
   const { title, description, date, location, category, status, videoUrl } = req.body;
 
@@ -78,9 +67,6 @@ exports.create = async (req, res) => {
   }
 };
 
-// @desc    Update an event
-// @route   PUT /api/events/:id
-// @access  Private (Admin/Editor)
 exports.update = async (req, res) => {
   try {
     const event = await Event.findByPk(req.params.id);
